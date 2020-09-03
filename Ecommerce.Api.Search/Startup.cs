@@ -38,10 +38,12 @@ namespace Ecommerce.Api.Search
 
         private void AddHttpClient(IServiceCollection services, string name)
         {
-            services.AddHttpClient(name, (configuration) =>
-            {
-                configuration.BaseAddress = new Uri(Configuration[$"Services:{name}"]);
-            }).AddTransientHttpErrorPolicy(p=>p.WaitAndRetryAsync(4, () => TimeSpan.FromSeconds(2));
+            services
+                .AddHttpClient(name, (configuration) =>
+                    {
+                        configuration.BaseAddress = new Uri(Configuration[$"Services:{name}"]);
+                    })
+                .AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
