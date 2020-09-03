@@ -4,6 +4,6 @@ namespace Ecommerce.Api.Search.Interfaces
 {
     public interface ISearchService
     {
-        Task<(bool IsSuccess, dynamic SearchResult)> Search();
+        Task<(bool IsSuccess, dynamic SearchResult)> Search(int id);
     }
 }

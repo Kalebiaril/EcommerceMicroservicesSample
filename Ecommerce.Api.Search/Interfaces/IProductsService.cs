@@ -6,6 +6,8 @@ namespace Ecommerce.Api.Search.Interfaces
 {
     public interface IProductsService
     {
-        Task<(bool IsSucess, IEnumerable<ProductModel> Products)> GetProductsAsync();
+        Task<(bool IsSuccess, IEnumerable<ProductModel> Products)> GetProductsAsync();
+
+        Task<(bool IsSuccess, ProductModel Product)> GetProductAsync(int id);
     }
 }

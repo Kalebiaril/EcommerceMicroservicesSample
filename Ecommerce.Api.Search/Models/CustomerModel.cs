@@ -7,6 +7,6 @@ namespace Ecommerce.Api.Search.Models
 {
     public class CustomerModel
     {
-        public string CustomerName{ get; set; }
+        public string Name { get; set; }
     }
 }

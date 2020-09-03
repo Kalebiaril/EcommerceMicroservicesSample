@@ -19,6 +19,15 @@ namespace Ecommerce.Api.Search.Controllers
             _searchService = searchService;
         }
 
-
+        [HttpGet("{id}", Name ="Get" )]
+        public async Task<ActionResult> Get(int id)
+        {
+            var result = await _searchService.Search(id);
+            if (result.IsSuccess)
+            {
+                return Ok(result.SearchResult);
+            }
+            return NotFound();
+        }        
     }
 }

@@ -6,6 +6,6 @@ namespace Ecommerce.Api.Search.Interfaces
 {
     public interface IOrdersService
     {
-        Task<(bool IsSucess, IEnumerable<OrderModel> Orders)> GetOrdersAsync();
+        Task<(bool IsSuccess, IEnumerable<OrderModel> Orders)> GetOrdersAsync(int customerId);
     }
 }
